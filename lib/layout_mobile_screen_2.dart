@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nintendo_db/layout_consola.dart';
+import 'package:nintendo_db/layout_joc.dart';
 import 'package:provider/provider.dart';
 import 'layout_personatge.dart';
 import 'layout_consola.dart';
@@ -23,7 +24,9 @@ class _StateLayoutMobileScreen2 extends State<LayoutMobileScreen2> {
       case 'Personatges':
         return LayoutPersonatge(itemData: itemData);
       case 'Consoles':
-        return LayautConsola(itemData: itemData);
+        return LayoutConsola(itemData: itemData);
+      case 'Jocs':
+        return LayoutJoc(itemData: itemData);
     }
     return Text('Unknown layout: ${widget.seccio}');
   }
@@ -40,8 +43,9 @@ class _StateLayoutMobileScreen2 extends State<LayoutMobileScreen2> {
     } else {
       return Scaffold(
           appBar: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+            backgroundColor: Colors.blue.shade200,
             title: Text(itemData['nom']),
+            centerTitle: true,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
               onPressed: () => Navigator.of(context).pop(),

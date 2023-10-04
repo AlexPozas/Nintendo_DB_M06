@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LayoutConsola extends StatelessWidget {
+class LayoutJoc extends StatelessWidget {
   final dynamic itemData;
 
 // Relacionar els colors amb el text que els defineix
@@ -16,7 +16,7 @@ class LayoutConsola extends StatelessWidget {
   };
 
 // Constructor
-  LayoutConsola({Key? key, required this.itemData}) : super(key: key);
+  LayoutJoc({Key? key, required this.itemData}) : super(key: key);
 
 // Retornar un 'Color' a partir del text, fent servir el mapa de colors anterior
   Color getColorFromString(String colorString) {
@@ -50,25 +50,19 @@ class LayoutConsola extends StatelessWidget {
                       fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 10),
-                Container(
-                  width: 10,
-                  height: 10,
-                  color: getColorFromString(itemData['color']),
-                ),
-                const SizedBox(height: 10),
                 Text(
-                  itemData['data'][0] +
-                      itemData['data'][1] +
-                      itemData['data'][2] +
-                      itemData['data'][3],
+                  itemData['any'].toString(),
                   style: TextStyle(
                     color: Colors.blueGrey.shade200,
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text(itemData['procesador']),
+                Text(itemData['tipus']),
                 const SizedBox(height: 10),
-                Text(itemData['venudes'].toString() + " Venudes"),
+                Text(
+                  itemData['descripcio'],
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
           ),

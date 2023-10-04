@@ -18,8 +18,9 @@ class _StateLayoutMobileScreen0 extends State<LayoutMobileScreen0> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.blue.shade200,
         title: const Text('Nintedno DB'),
+        centerTitle: true,
       ),
       body: ListView(
         children: <Widget>[
